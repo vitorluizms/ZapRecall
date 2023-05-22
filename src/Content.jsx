@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import play from "./assets/seta_play.png";
 import turn from "./assets/seta_virar.png";
+import right from "./assets/icone_certo.png";
+import wrong from "./assets/icone_erro.png";
+import almost from "./assets/icone_quase.png";
 import { useState } from "react";
 import Flashcard from "./Flashcard";
 
@@ -14,6 +17,7 @@ export default function Content() {
       question: "O que é JSX?",
       answer: "Uma extensão da linguagem JavaScript",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -21,6 +25,7 @@ export default function Content() {
       question: "O React é __",
       answer: "Uma biblioteca JavaScript para construção de interfaces",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -28,6 +33,7 @@ export default function Content() {
       question: "Componentes devem iniciar com __",
       answer: "Letra maiúscula",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -35,6 +41,7 @@ export default function Content() {
       question: "Podemos colocar __ dentro do JSX",
       answer: "expressões",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -42,6 +49,7 @@ export default function Content() {
       question: "O ReactDOM nos ajuda __",
       answer: "Interagindo com a DOM para colocar componentes React na mesma",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -49,6 +57,7 @@ export default function Content() {
       question: "Usamos o npm para __",
       answer: "Gerenciar os pacotes necessários e suas dependências",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -56,6 +65,7 @@ export default function Content() {
       question: "Usamos props para __",
       answer: "Passar diferentes informações para componentes",
       stage: "first",
+      color: ""
     },
     {
       icon: play,
@@ -64,34 +74,49 @@ export default function Content() {
       answer:
         "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
       stage: "first",
+      color: ""
     },
   ]);
 
   const [question, setQuestion] = useState([]);
   const [answer, setAnswer] = useState([]);
-  const [firstStage, setFirst] = useState(true);
-  const [secondStage, setSecond] = useState(false);
-  const [thirdStage, setThird] = useState(false);
 
   function replaceCard(card, index) {
     let array = [...cards];
     let arrayQuestion = [...question];
     let arrayAnswer = [...answer];
-    if (!card.icon.includes(turn)) {
-      array[index].icon = turn;
-    }
-    if (!question.includes(card.question)) {
+    if (card.stage === "first") {
       arrayQuestion[index] = card.question;
       setQuestion(arrayQuestion);
-    } else if (
-      !answer.includes(card.answer) &&
-      question.includes(card.question)
-    ) {
+      array[index].stage = "second";
+      array[index].icon = turn;
+    } else if (card.stage === "second") {
+      array[index].stage = "third";
       arrayAnswer[index] = card.answer;
       setAnswer(arrayAnswer);
     }
     setCards(array);
   }
+
+  function fourthStage(card, index, result) {
+    let array = [...cards];
+    array[index].stage = "fourth";
+    if (result === 'right') {
+      array[index].icon = right;
+      array[index].color = 'green';
+    }
+    else if (result === 'wrong') {
+      array[index].icon = wrong;
+      array[index].color = 'red';
+    }
+    else {
+      array[index].icon = almost;
+      array[index].color = 'orange';
+    }
+    setCards(array)
+
+  }
+
   console.log(question);
   console.log(answer);
   return (
@@ -104,6 +129,7 @@ export default function Content() {
           index={index}
           key={card.number}
           question={question}
+          fourthStage={fourthStage}
         />
       ))}
     </ContainerDeck>

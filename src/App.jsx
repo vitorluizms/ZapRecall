@@ -3,16 +3,19 @@ import Header from "./Header.jsx";
 import Content from "./Content.jsx";
 import Footer from "./Footer.jsx";
 import GlobalStyle from "./globalStyles.js";
-import React from "react";
+import React, { useState } from "react";
 
 export default function App() {
+  
+  const [textResult, setResult] = useState("0/8 Concluídos")
+  
   return (
     <React.Fragment>
       <GlobalStyle />
       <Container>
         <Header />
         <Content />
-        <Footer />
+        <Footer text={textResult}/>
       </Container>
     </React.Fragment>
   );
