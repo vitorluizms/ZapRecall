@@ -12,7 +12,7 @@ export default function Flashcard(props) {
     props;
   return (
     <Card card={card} data-test="flashcard">
-      <div>
+      <div data-test="flashcard">
         <p data-test="flashcard-text">
           {card.stage === "first" || card.stage === "fourth"
             ? card.number
@@ -36,7 +36,7 @@ export default function Flashcard(props) {
               : "partial-icon"
           }
         />
-      </div>
+        </div>
       <ContainerButtons card={card}>
         <button
           data-test="no-btn"
