@@ -74,8 +74,7 @@ const Card = styled.div`
 
     display: flex;
     justify-content: space-between;
-    align-items: ${(props) =>
-      props.card.stage === "third" ? "space-between" : "center"};
+    align-items: center;
     p {
       font-family: "Recursive";
       font-style: normal;
@@ -84,8 +83,7 @@ const Card = styled.div`
       line-height: 19px;
       word-break: break-word;
 
-      margin-left: 17px;
-      margin-right: 18px;
+      margin-left: 12px;
       color: ${(props) =>
         props.card.color === "green"
           ? "#2FBE34"
@@ -98,7 +96,6 @@ const Card = styled.div`
         props.card.stage === "fourth" ? "line-through" : "none"};
     }
     img {
-      height: 23px;
       margin-right: 15px;
       margin-top: ${(props) =>
         props.card.stage === "first" || props.card.stage === "fourth"
