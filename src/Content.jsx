@@ -7,8 +7,9 @@ import almost from "./assets/icone_quase.png";
 import { useState } from "react";
 import Flashcard from "./Flashcard";
 
-export default function Content() {
-  const [icon, setImage] = useState(play);
+export default function Content(props) {
+
+  const {changeResult} = props;
 
   const [cards, setCards] = useState([
     {
@@ -114,11 +115,10 @@ export default function Content() {
       array[index].color = 'orange';
     }
     setCards(array)
+    changeResult();
 
   }
 
-  console.log(question);
-  console.log(answer);
   return (
     <ContainerDeck>
       {cards.map((card, index) => (

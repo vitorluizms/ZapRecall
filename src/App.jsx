@@ -7,14 +7,24 @@ import React, { useState } from "react";
 
 export default function App() {
   
-  const [textResult, setResult] = useState("0/8 Concluídos")
+  const [hits, setHits] = useState(0)
+  const [textResult, setResult] = useState(hits+"/8 Concluídos")
+  console.log(hits)
+  console.log(textResult)
+  function changeResult (){
+    let count = hits + 1
+    setHits(count)
+    setResult(count+'/8 Concluídos');
+
+  }
+  
   
   return (
     <React.Fragment>
       <GlobalStyle />
       <Container>
         <Header />
-        <Content />
+        <Content changeResult={changeResult}/>
         <Footer text={textResult}/>
       </Container>
     </React.Fragment>

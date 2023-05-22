@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export default function Footer() {
+export default function Footer(props) {
+  
+  const {text} = props;
+  
   return (
     <ContainerFooter>
-      <p>0/8 Concluídos</p>
+      <p>{text}</p>
     </ContainerFooter>
   );
 }
