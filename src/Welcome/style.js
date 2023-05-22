@@ -1,17 +1,4 @@
 import styled from "styled-components";
-import logo from "./assets/logo.png";
-
-export default function WelcomePage(props) {
-  const { startZap, state} = props;
-
-  return (
-    <ContainerWelcome state={state} data-test="start-btn">
-      <img src={logo} alt="logo" />
-      <p>ZapRecall</p>
-      <button onClick={() => startZap()}>Iniciar Recall!</button>
-    </ContainerWelcome>
-  );
-}
 
 const ContainerWelcome = styled.div`
   width: 100%;
@@ -23,7 +10,7 @@ const ContainerWelcome = styled.div`
   align-items: center;
   gap: 35px;
 
-  display: ${props => props.state !== "zero" ? 'none' : ''};
+  display: ${(props) => (props.state !== "zero" ? "none" : "")};
 
   img {
     width: 136px;
@@ -57,3 +44,5 @@ const ContainerWelcome = styled.div`
     color: #d70900;
   }
 `;
+
+export default ContainerWelcome;

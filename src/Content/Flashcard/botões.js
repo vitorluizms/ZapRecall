@@ -29,13 +29,13 @@ const ContainerButtons = styled.div`
     justify-content: center;
     align-items: center;
   }
-  button:first-child{
+  button:first-child {
     background: #ff3030;
   }
-  button:last-child{
+  button:last-child {
     background: #2fbe34;
   }
-  button:nth-child(2){
+  button:nth-child(2) {
     background: #ff922e;
   }
 `;

@@ -26,8 +26,8 @@ export default function Footer(props) {
       </div>
       <p>{text}</p>
       <div>
-        {icons.map((icon) => (
-          <Image key={icon} icon={icon} />
+        {icons.map((icon, index) => (
+          <Image key={index} icon={icon} />
         ))}
       </div>
     </ContainerFooter>

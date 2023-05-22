@@ -50,7 +50,7 @@ const ContainerFooter = styled.div`
     color: #333333;
   }
 
-  div:last-child{
+  div:last-child {
     margin-top: 6px;
   }
 `;
