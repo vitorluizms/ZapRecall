@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import play from "./assets/seta_play.png";
-import turn from "./assets/seta_virar.png";
-import right from "./assets/icone_certo.png";
-import wrong from "./assets/icone_erro.png";
-import almost from "./assets/icone_quase.png";
+import play from "../assets/seta_play.png";
+import turn from "../assets/seta_virar.png";
+import right from "../assets/icone_certo.png";
+import wrong from "../assets/icone_erro.png";
+import almost from "../assets/icone_quase.png";
 import { useState } from "react";
-import Flashcard from "./Flashcard";
+import Flashcard from "./Flashcard/Flashcard";
+import ContainerDeck from "./style";
 
 export default function Content(props) {
 
@@ -135,14 +136,3 @@ export default function Content(props) {
     </ContainerDeck>
   );
 }
-
-const ContainerDeck = styled.div`
-  width: 300px;
-  height: auto;
-  margin-top: 51px;
-  margin-bottom: 116px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;

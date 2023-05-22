@@ -1,14 +1,4 @@
 import styled from "styled-components";
-import logo from "./assets/logo.png";
-
-export default function Header() {
-  return (
-    <ContainerHeader>
-      <img src={logo} alt={logo} />
-      <h1>ZapRecall</h1>
-    </ContainerHeader>
-  );
-}
 
 const ContainerHeader = styled.div`
   width: 256px;
@@ -36,3 +26,5 @@ const ContainerHeader = styled.div`
     color: #ffffff;
   }
 `;
+
+export default ContainerHeader;

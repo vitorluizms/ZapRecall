@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export default function Footer(props) {
-  
-  const {text} = props;
-  
-  return (
-    <ContainerFooter data-test="footer">
-      <p>{text}</p>
-    </ContainerFooter>
-  );
-}
-
 const ContainerFooter = styled.div`
   width: 100%;
   height: 70px;
@@ -34,3 +23,5 @@ const ContainerFooter = styled.div`
     color: #333333;
   }
 `;
+
+export default ContainerFooter;
