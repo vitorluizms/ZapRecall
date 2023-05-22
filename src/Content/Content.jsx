@@ -9,8 +9,7 @@ import Flashcard from "./Flashcard/Flashcard";
 import ContainerDeck from "./style";
 
 export default function Content(props) {
-  const { changeResult, state } = props;
-  console.log(state)
+  const { changeResult, state, final } = props;
 
   const [cards, setCards] = useState([
     {
@@ -79,11 +78,8 @@ export default function Content(props) {
       color: "",
     },
   ]);
-console.log(cards)
   const [question, setQuestion] = useState([]);
   const [answer, setAnswer] = useState([]);
-  let card1 = cards[0]
-  console.log(card1)
 
   function replaceCard(card, index) {
     let array = [...cards];
@@ -116,11 +112,11 @@ console.log(cards)
       array[index].color = "orange";
     }
     setCards(array);
-    changeResult();
+    changeResult(result);
   }
 
   return (
-    <ContainerDeck state={state}>
+    <ContainerDeck state={state} final={final}>
       {cards.map((card, index) => (
         <Flashcard
           state={state}

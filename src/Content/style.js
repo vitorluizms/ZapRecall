@@ -4,7 +4,7 @@ const ContainerDeck = styled.div`
   width: 300px;
   height: auto;
   margin-top: 51px;
-  margin-bottom: 116px;
+  margin-bottom: ${props => props.final === false ? "116px" : "217px"};
 
   display: flex;
   flex-direction: column;
