@@ -44,7 +44,7 @@ export default function Flashcard(props) {
           <p>Não lembrei</p>
         </button>
         <button
-          data-test="partital-btn"
+          data-test="partial-btn"
           onClick={() => fourthStage(card, index, "almost")}
         >
           <p>Quase não lembrei</p>
