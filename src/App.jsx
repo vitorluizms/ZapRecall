@@ -9,13 +9,10 @@ export default function App() {
   
   const [hits, setHits] = useState(0)
   const [textResult, setResult] = useState(hits+"/8 Concluídos")
-  console.log(hits)
-  console.log(textResult)
   function changeResult (){
     let count = hits + 1
     setHits(count)
     setResult(count+'/8 Concluídos');
-
   }
   
   

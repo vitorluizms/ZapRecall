@@ -5,7 +5,7 @@ export default function Footer(props) {
   const {text} = props;
   
   return (
-    <ContainerFooter>
+    <ContainerFooter data-test="footer">
       <p>{text}</p>
     </ContainerFooter>
   );
