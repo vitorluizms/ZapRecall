@@ -47,6 +47,8 @@ const Card = styled.div`
         props.card.stage === "fourth" ? "line-through" : "none"};
     }
     img {
+      width: 23px;
+      height: 23px;
       margin-right: 15px;
       margin-top: ${(props) =>
         props.card.stage === "first" || props.card.stage === "fourth"

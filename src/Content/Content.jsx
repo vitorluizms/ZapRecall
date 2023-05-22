@@ -119,6 +119,7 @@ export default function Content(props) {
     <ContainerDeck state={state} final={final}>
       {cards.map((card, index) => (
         <Flashcard
+          data-test="flashcard"
           state={state}
           replaceCard={replaceCard}
           answer={answer}
