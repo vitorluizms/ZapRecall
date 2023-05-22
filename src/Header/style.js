@@ -7,6 +7,7 @@ const ContainerHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 42px;
+  display: ${(props) => (props.state === "zero" ? "none" : "")};
 
   img {
     width: 52px;

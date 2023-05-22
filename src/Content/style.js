@@ -9,6 +9,7 @@ const ContainerDeck = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  display: ${(props) => (props.state === "zero" ? "none" : "flex")};
 `;
 
 export default ContainerDeck;

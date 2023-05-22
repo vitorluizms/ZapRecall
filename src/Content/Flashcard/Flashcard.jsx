@@ -8,7 +8,8 @@ import Card from "./flashcard";
 import ContainerButtons from "./botões";
 
 export default function Flashcard(props) {
-  const { card, index, replaceCard, question, answer, fourthStage } = props;
+  const { card, index, replaceCard, question, answer, fourthStage, state } =
+    props;
   return (
     <Card card={card} data-test="flashcard">
       <div>

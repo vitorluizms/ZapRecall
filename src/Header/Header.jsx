@@ -1,9 +1,11 @@
 import ContainerHeader from "./style";
 import logo from "../assets/logo.png";
 
-export default function Header() {
+export default function Header(props) {
+
+  const {state} = props
   return (
-    <ContainerHeader>
+    <ContainerHeader state={state}>
       <img src={logo} alt={logo} />
       <h1>ZapRecall</h1>
     </ContainerHeader>

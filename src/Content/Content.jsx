@@ -9,8 +9,8 @@ import Flashcard from "./Flashcard/Flashcard";
 import ContainerDeck from "./style";
 
 export default function Content(props) {
-
-  const {changeResult} = props;
+  const { changeResult, state } = props;
+  console.log(state)
 
   const [cards, setCards] = useState([
     {
@@ -19,7 +19,7 @@ export default function Content(props) {
       question: "O que é JSX?",
       answer: "Uma extensão da linguagem JavaScript",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -27,7 +27,7 @@ export default function Content(props) {
       question: "O React é __",
       answer: "Uma biblioteca JavaScript para construção de interfaces",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -35,7 +35,7 @@ export default function Content(props) {
       question: "Componentes devem iniciar com __",
       answer: "Letra maiúscula",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -43,7 +43,7 @@ export default function Content(props) {
       question: "Podemos colocar __ dentro do JSX",
       answer: "expressões",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -51,7 +51,7 @@ export default function Content(props) {
       question: "O ReactDOM nos ajuda __",
       answer: "Interagindo com a DOM para colocar componentes React na mesma",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -59,7 +59,7 @@ export default function Content(props) {
       question: "Usamos o npm para __",
       answer: "Gerenciar os pacotes necessários e suas dependências",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -67,7 +67,7 @@ export default function Content(props) {
       question: "Usamos props para __",
       answer: "Passar diferentes informações para componentes",
       stage: "first",
-      color: ""
+      color: "",
     },
     {
       icon: play,
@@ -76,12 +76,14 @@ export default function Content(props) {
       answer:
         "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
       stage: "first",
-      color: ""
+      color: "",
     },
   ]);
-
+console.log(cards)
   const [question, setQuestion] = useState([]);
   const [answer, setAnswer] = useState([]);
+  let card1 = cards[0]
+  console.log(card1)
 
   function replaceCard(card, index) {
     let array = [...cards];
@@ -103,27 +105,25 @@ export default function Content(props) {
   function fourthStage(card, index, result) {
     let array = [...cards];
     array[index].stage = "fourth";
-    if (result === 'right') {
+    if (result === "right") {
       array[index].icon = right;
-      array[index].color = 'green';
-    }
-    else if (result === 'wrong') {
+      array[index].color = "green";
+    } else if (result === "wrong") {
       array[index].icon = wrong;
-      array[index].color = 'red';
-    }
-    else {
+      array[index].color = "red";
+    } else {
       array[index].icon = almost;
-      array[index].color = 'orange';
+      array[index].color = "orange";
     }
-    setCards(array)
+    setCards(array);
     changeResult();
-
   }
 
   return (
-    <ContainerDeck>
+    <ContainerDeck state={state}>
       {cards.map((card, index) => (
         <Flashcard
+          state={state}
           replaceCard={replaceCard}
           answer={answer}
           card={card}

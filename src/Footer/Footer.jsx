@@ -2,10 +2,10 @@ import ContainerFooter from "./style";
 
 export default function Footer(props) {
   
-  const {text} = props;
+  const {text, state} = props;
   
   return (
-    <ContainerFooter data-test="footer">
+    <ContainerFooter state={state} data-test="footer">
       <p>{text}</p>
     </ContainerFooter>
   );

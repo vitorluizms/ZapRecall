@@ -7,12 +7,13 @@ const ContainerFooter = styled.div`
   left: 0;
   bottom: 0;
   z-index: 2;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   background-color: #ffffff;
+  display: ${(props) => (props.state === "zero" ? "none" : "")};
   p {
     font-family: "Recursive";
     font-style: normal;

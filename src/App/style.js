@@ -8,7 +8,7 @@ const Container = styled.div`
   justify-content: space-evenly;
   align-items: center;
   box-sizing: border-box;
-  background-color: #fb6b6b;
+  background: #fb6b6b;
 `;
 
 export default Container;
