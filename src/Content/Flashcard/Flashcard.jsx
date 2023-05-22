@@ -11,7 +11,7 @@ export default function Flashcard(props) {
   const { card, index, replaceCard, question, answer, fourthStage, state } =
     props;
   return (
-    <Card card={card}>
+    <Card data-test="flashcard" card={card}>
       <div>
         <p data-test="flashcard-text">
           {card.stage === "first" || card.stage === "fourth"
